@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tab System Example (Refactored)</title>
+    <link rel="stylesheet" href="contents.css" />
+</head>
+
+<body>
+    <header>Fixed Header Area (Height: 60px)</header>
+
+    <div class="container">
+        <h1>Tab System</h1>
+
+        <div class="standard-tabs" role="tablist" aria-label="Main Content Selection">
+            <button class="standard-tabs__button" role="tab" aria-selected="true" aria-controls="standard-panel-alpha"
+                id="standard-tab-alpha">
+                Standard Tab Alpha
+            </button>
+            <button class="standard-tabs__button" role="tab" aria-selected="false" aria-controls="standard-panel-beta"
+                id="standard-tab-beta">
+                Standard Tab Beta
+            </button>
+        </div>
+
+        <div class="standard-tabpanels">
+            <div class="standard-tabpanels__panel active" role="tabpanel" id="standard-panel-alpha" aria-labelledby="standard-tab-alpha">
+                <h3>Standard Tab Alpha Content</h3>
+
+                <nav class="sticky-tabs" aria-label="Alpha Panel Sections">
+                    <ul class="sticky-tabs__list" role="tablist">
+                        <li class="sticky-tabs__item" role="presentation">
+                            <a href="#section-alpha-1" class="sticky-tabs__link" role="tab" aria-controls="section-alpha-1"
+                                id="sticky-alpha-1">Section A.1</a>
+                        </li>
+                        <li class="sticky-tabs__item" role="presentation">
+                            <a href="#section-alpha-2" class="sticky-tabs__link" role="tab" aria-controls="section-alpha-2"
+                                id="sticky-alpha-2">Section A.2</a>
+                        </li>
+                        <li class="sticky-tabs__item" role="presentation">
+                            <a href="#section-alpha-3" class="sticky-tabs__link" role="tab" aria-controls="section-alpha-3"
+                                id="sticky-alpha-3">Section A.3</a>
+                        </li>
+                        <li class="sticky-tabs__item" role="presentation">
+                            <a href="#section-alpha-4" class="sticky-tabs__link" role="tab" aria-controls="section-alpha-4"
+                                id="sticky-alpha-4">Section A.4</a>
+                        </li>
+                        <li class="sticky-tabs__item" role="presentation">
+                            <a href="#section-alpha-5" class="sticky-tabs__link" role="tab" aria-controls="section-alpha-5"
+                                id="sticky-alpha-5">Section A.5</a>
+                        </li>
+                        <li class="sticky-tabs__item" role="presentation">
+                            <a href="#section-alpha-6" class="sticky-tabs__link" role="tab" aria-controls="section-alpha-6"
+                                id="sticky-alpha-6">Section A.6</a>
+                        </li>
+                        <li class="sticky-tabs__item" role="presentation">
+                            <a href="#section-alpha-7" class="sticky-tabs__link" role="tab" aria-controls="section-alpha-7"
+                                id="sticky-alpha-7">Section A.7</a>
+                        </li>
+                        <li class="sticky-tabs__item" role="presentation">
+                            <a href="#section-alpha-8" class="sticky-tabs__link" role="tab" aria-controls="section-alpha-8"
+                                id="sticky-alpha-8">Section A.8</a>
+                        </li>
+                        <li class="sticky-tabs__item" role="presentation">
+                            <a href="#section-alpha-9" class="sticky-tabs__link" role="tab" aria-controls="section-alpha-9"
+                                id="sticky-alpha-9">Section A.9</a>
+                        </li>
+                        <li class="sticky-tabs__item" role="presentation">
+                            <a href="#section-alpha-10" class="sticky-tabs__link" role="tab" aria-controls="section-alpha-10"
+                                id="sticky-alpha-10">Section A.10</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="sticky-tabpanels">
+                    <section id="section-alpha-1" class="sticky-tabpanels__section" aria-labelledby="sticky-alpha-1" tabindex="-1">
+                        <h2>Section A.1 Content</h2>
+                        <p>This is the first section within Standard Tab Alpha. Scroll to see the sticky tabs in action.</p>
+                    </section>
+                    <section id="section-alpha-2" class="sticky-tabpanels__section" aria-labelledby="sticky-alpha-2" tabindex="-1">
+                        <h2>Section A.2 Content</h2>
+                        <p>Content for section A.2...</p>
+                    </section>
+                    <section id="section-alpha-3" class="sticky-tabpanels__section" aria-labelledby="sticky-alpha-3" tabindex="-1">
+                        <h2>Section A.3 Content (More Content)</h2>
+                        <p>More lines to make it taller. <a href="https://www.naver.com">naver.com</a></p>
+                    </section>
+                    <section id="section-alpha-4" class="sticky-tabpanels__section" aria-labelledby="sticky-alpha-4" tabindex="-1">
+                        <h2>Section A.3 Content (More Content)</h2>
+                        <p>More lines to make it taller.</p>
+                    </section>
+                    <section id="section-alpha-5" class="sticky-tabpanels__section" aria-labelledby="sticky-alpha-5" tabindex="-1">
+                        <h2>Section A.3 Content (More Content)</h2>
+                        <p>More lines to make it taller.</p>
+                    </section>
+                    <section id="section-alpha-6" class="sticky-tabpanels__section" aria-labelledby="sticky-alpha-6" tabindex="-1">
+                        <h2>Section A.3 Content (More Content)</h2>
+                        <p>More lines to make it taller.</p>
+                    </section>
+                    <section id="section-alpha-7" class="sticky-tabpanels__section" aria-labelledby="sticky-alpha-7" tabindex="-1">
+                        <h2>Section A.3 Content (More Content)</h2>
+                        <p>More lines to make it taller.</p>
+                    </section>
+                    <section id="section-alpha-8" class="sticky-tabpanels__section" aria-labelledby="sticky-alpha-8" tabindex="-1">
+                        <h2>Section A.3 Content (More Content)</h2>
+                        <p>More lines to make it taller.</p>
+                    </section>
+                    <section id="section-alpha-9" class="sticky-tabpanels__section" aria-labelledby="sticky-alpha-9" tabindex="-1">
+                        <h2>Section A.3 Content (More Content)</h2>
+                        <p>More lines to make it taller.</p>
+                    </section>
+                    <section id="section-alpha-10" class="sticky-tabpanels__section" aria-labelledby="sticky-alpha-10" tabindex="-1">
+                        <h2>Section A.3 Content (More Content)</h2>
+                        <p>More lines to make it taller.</p>
+                    </section>
+                </div>
+            </div>
+
+            <div class="standard-tabpanels__panel" role="tabpanel" id="standard-panel-beta" aria-labelledby="standard-tab-beta">
+                <h3>Standard Tab Beta Content</h3>
+                 <nav class="sticky-tabs" aria-label="Beta Panel Sections">
+                    <ul class="sticky-tabs__list" role="tablist">
+                        <li class="sticky-tabs__item" role="presentation">
+                            <a href="#section-beta-1" class="sticky-tabs__link" role="tab" aria-controls="section-beta-1"
+                                id="sticky-beta-1">Section B.1</a>
+                        </li>
+                        <li class="sticky-tabs__item" role="presentation">
+                            <a href="#section-beta-2" class="sticky-tabs__link" role="tab" aria-controls="section-beta-2"
+                                id="sticky-beta-2">Section B.2</a>
+                        </li>
+                         <li class="sticky-tabs__item" role="presentation">
+                            <a href="#section-beta-3" class="sticky-tabs__link" role="tab" aria-controls="section-beta-3"
+                                id="sticky-beta-3">Section B.3</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="sticky-tabpanels">
+                    <section id="section-beta-1" class="sticky-tabpanels__section" aria-labelledby="sticky-beta-1" tabindex="-1">
+                        <h2>Section B.1 Content</h2>
+                        <p>This is the first section within Standard Tab Beta.</p>
+                    </section>
+                    <section id="section-beta-2" class="sticky-tabpanels__section" aria-labelledby="sticky-beta-2" tabindex="-1">
+                        <h2>Section B.2 Content</h2>
+                        <p>Content for section B.2...</p>
+                    </section>
+                    <section id="section-beta-3" class="sticky-tabpanels__section" aria-labelledby="sticky-beta-3" tabindex="-1">
+                        <h2>Section B.3 Content</h2>
+                        <p>Content for section B.3... <a href="https://www.naver.com">naver.com</a></p>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>Footer</footer>
+    <script src="contents.js"></script>
+</body>
+</html>

@@ -1,0 +1,257 @@
+/* General Styles */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+    padding: 10px 20px;
+    z-index: 1000;
+    height: 60px;
+    /* Explicit height, matches JS assumption if header.offsetHeight is used */
+    border-bottom: 1px solid #d1d9e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #333;
+}
+
+.container {
+    max-width: 960px;
+    margin: 20px auto;
+    padding: 0 15px;
+    margin-top: 80px;
+    /* Adjust for fixed header */
+}
+
+.blind {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: polygon(0 0, 0 0, 0 0);
+    white-space: nowrap;
+}
+
+/* Section styling for sticky tab content */
+.sticky-tabpanels__section {
+    padding: 25px;
+    min-height: 850px;
+    /* Ensure sections have enough height for scrolling test */
+    border: 1px solid #e0e6ed;
+    margin-bottom: 25px;
+    border-radius: 0.375rem;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.sticky-tabpanels__section:focus-visible {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+}
+
+
+h1,
+h2,
+h3 {
+    margin-top: 0;
+    color: #2c3e50;
+}
+
+h1 {
+    display: flex;
+    min-height: 700px;
+    font-size: 2.25rem;
+    margin-bottom: 1.25rem;
+    text-align: center;
+    color: #1a5f9e;
+    align-items: center;
+    justify-content: center;
+    background-color: darkgray;
+}
+
+h2 {
+    /* Used in sticky sections */
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 0.5rem;
+}
+
+h3 {
+    /* Used in standard panels */
+    font-size: 1.3rem;
+    margin-bottom: 0.75rem;
+    color: #34495e;
+}
+
+p {
+    margin-bottom: 1rem;
+    color: #555;
+    line-height: 1.7;
+}
+
+/* Standard Tabs (Content Switching) */
+.standard-tabs {
+    display: flex;
+    background-color: #f0f4f8;
+    padding: 12px;
+    border-radius: 0.375rem 0.375rem 0 0;
+    border: 1px solid #d1d9e0;
+    border-bottom: none;
+}
+
+.standard-tabs__button {
+    padding: 10px 20px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    margin-right: 10px;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #4a5568;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.standard-tabs__button:hover {
+    background-color: #e2e8f0;
+    color: #2d3748;
+}
+
+.standard-tabs__button:focus-visible {
+    outline: 2px solid #3182ce;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px rgba(49, 130, 206, 0.3);
+}
+
+.standard-tabs__button.active,
+.standard-tabs__button--active {
+    /* JS might use one or both */
+    background-color: #3182ce;
+    color: #fff;
+    font-weight: 600;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.standard-tabpanels__panel {
+    padding: 25px;
+    border: 1px solid #d1d9e0;
+    border-top: none;
+    border-radius: 0 0 0.375rem 0.375rem;
+    background-color: #ffffff;
+}
+
+.standard-tabpanels__panel.active,
+.standard-tabpanels__panel--active {
+    display: block;
+}
+
+.standard-tabpanels__panel:not(.active):not(.standard-tabpanels__panel--active) {
+    display: none;
+}
+
+/* Sticky Scroll Tabs (Navigation within a panel) */
+.sticky-tabs {
+    position: sticky;
+    top: 81px;
+    /* Height of the fixed header */
+    background-color: #ffffff;
+    z-index: 900;
+    border-bottom: 2px solid #cbd5e0;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 8px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.sticky-tabs::-webkit-scrollbar {
+    height: 8px;
+}
+
+.sticky-tabs::-webkit-scrollbar-thumb {
+    background-color: #a0aec0;
+    border-radius: 4px;
+}
+
+.sticky-tabs__list {
+    list-style: none;
+    padding: 0 15px;
+    margin: 0;
+    display: flex;
+    /* Ensures items are in a row */
+}
+
+.sticky-tabs__item {
+    display: inline-block;
+    /* Fallback or if flex isn't directly on items */
+}
+
+.sticky-tabs__link {
+    display: block;
+    padding: 10px 18px;
+    text-decoration: none;
+    color: #4a5568;
+    border-bottom: 3px solid transparent;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+    margin-right: 5px;
+    border-radius: 4px 4px 0 0;
+}
+
+.sticky-tabs__link:hover {
+    color: #2c5282;
+    background-color: #edf2f7;
+}
+
+.sticky-tabs__link:focus-visible {
+    outline: 2px solid #3182ce;
+    outline-offset: -2px;
+    /* Adjust to be inside the link */
+}
+
+.sticky-tabs__link.active,
+/* JS uses this for active state */
+.sticky-tabs__link[aria-selected="true"] {
+    color: #2b6cb0;
+    border-bottom-color: #2b6cb0;
+    font-weight: 600;
+}
+
+/* Container for sections linked by sticky tabs */
+.sticky-tabpanels {
+    padding-top: 20px;
+    /* Space below the sticky nav bar */
+}
+
+/* Optional: controls within sections, if needed */
+.section-controls {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.loading-indicator {
+    font-size: 0.9rem;
+    color: #4a5568;
+}
+
+.section-content-area {
+    margin-top: 10px;
+}
+
+footer {
+    display: flex;
+    min-height: 700px;
+    font-size: 2.25rem;
+    margin-bottom: 1.25rem;
+    text-align: center;
+    color: #1a5f9e;
+    align-items: center;
+    justify-content: center;
+    background-color: darkgrey;
+}
